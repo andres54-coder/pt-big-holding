@@ -23,6 +23,6 @@ _4. por ultimo inicia el servidor de desarrollo con_
 ```
 php artisan serve
 ```
-##el link de la app deberia quedar como http://127.0.0.1:8000
+el link de la app deberia quedar como http://127.0.0.1:8000 - DIRIGITE A http://127.0.0.1:8000/users PARA EMPEZAR A PROBARLA
 
 - [Coleccion para testear API en POSTMAN](https://drive.google.com/file/d/11YGWFTJAsFgmqLVDIBR9r59XFPWrkztf/view?usp=share_link).
