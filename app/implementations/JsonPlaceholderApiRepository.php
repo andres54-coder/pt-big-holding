@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\Http;
 class JsonPlaceholderApiRepository implements ApiRepository {
 
     public function getUserWithTransactions(int $userId): array {
-        $user = Http::get(env('API_HOST')."/users/{$userId}");
+        $user = Http::withOptions(['verify' => false])->get(env('API_HOST')."/users/{$userId}");
         if (count($user->json()) === 0) {
             return $user->json();
         }
@@ -19,12 +19,12 @@ class JsonPlaceholderApiRepository implements ApiRepository {
     }
 
     public function getUsers(): array {
-        $response = Http::get(env('API_HOST')."/users");
+        $response = Http::withOptions(['verify' => false])->get(env('API_HOST')."/users");
         return $response->json();
     }
 
     public function getTransactions(int $userId): array {
-        $response = Http::get(env('API_HOST')."/users/{$userId}/transactions");
+        $response = Http::withOptions(['verify' => false])->get(env('API_HOST')."/users/{$userId}/transactions");
         return $response->json();
     }
 }
